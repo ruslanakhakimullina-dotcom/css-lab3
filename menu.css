@@ -1,0 +1,75 @@
+/* Вертикальные меню (задания 2, 2*, 3) */
+body {
+  margin: 20px;
+  font-family: 'Times New Roman', serif;
+}
+.title {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.vnav {
+  width: 150px;
+  box-shadow: 3px 3px rgb(165, 165, 165);
+}
+
+/* пункт верхнего уровня */
+.vnav .pt {
+  display: block;
+  background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+  border-bottom: 1px solid #c9c9c9;
+  border-radius: 4px;
+  padding: 8px 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.vnav .pt:hover {
+  background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+
+/* обёртка пункта с подменю */
+.vnav .item {
+  position: relative;      /* .drop позиционируется относительно пункта */
+}
+
+/* выпадающий блок: справа от пункта */
+.vnav .drop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 110px;
+}
+.vnav .item:hover > .drop {
+  display: block;
+}
+
+.drop_item {
+  display: block;
+  background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+  border-radius: 4px;
+  padding: 8px 6px;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+.drop_item:hover {
+  background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+
+/* Задание 3: подменю раскрывается вниз, сдвигая остальные пункты */
+.accordion .drop {
+  position: static;
+  width: auto;
+}
+.accordion .pt {
+  background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+.accordion .pt:hover {
+  background: linear-gradient(to bottom, rgb(185, 185, 185), rgb(120, 120, 120));
+}
